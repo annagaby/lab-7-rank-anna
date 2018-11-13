@@ -37,3 +37,18 @@ kermit_hist
 ```
 
 >>>>>>> f684e80a7d0942140f866327e27beb646a76894b
+
+
+Question: Is there a significant differnece in pre-talk ranks of kermit for Male and Female respondents?
+
+```{r}
+mwu_kermit <- kermit %>% kermitwilcox.test(Score)
+
+# Null
+# Alternative
+
+
+
+```
+
+There was no significant difference in ranks for male and female respondents (W = 155.5, p=0.4, alpha = 0.05)
