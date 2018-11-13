@@ -10,3 +10,24 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Anna's first meassage in the document
+
+
+```{r}
+#Priscilla loading tidyverse and reading in kermit data
+
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+```
+```{r}
+#Prisclla making side by side histograms of Score.pre separated by gender
+
+kermit_hist <-kermit %>% 
+  ggplot(aes(x = Score.pre)) +
+  geom_histogram(bins = 4) +
+  facet_wrap(~Gender)
+
+kermit_hist
+```
+
