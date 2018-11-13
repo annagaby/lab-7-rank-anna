@@ -36,19 +36,32 @@ kermit_hist <-kermit %>%
 kermit_hist
 ```
 
->>>>>>> f684e80a7d0942140f866327e27beb646a76894b
 
-
+perform rank based comaprsisons using Mann Whitney U and Wilcoxon sign ranked
 Question: Is there a significant differnece in pre-talk ranks of kermit for Male and Female respondents?
 
 ```{r}
-mwu_kermit <- kermit %>% kermitwilcox.test(Score)
+mwu_kermit <- kermit %>% 
+  wilcox.test(Score.pre ~Gender, data = .)
 
-# Null
-# Alternative
+# Null: NO significant difference
+# Alternative: there is a significant difference in ranks
 
+mwu_kermit
 
 
 ```
 
 There was no significant difference in ranks for male and female respondents (W = 155.5, p=0.4, alpha = 0.05)
+
+Next questiob: Is there a significant change in Kermit rankings before and after his bren talk
+
+```{r}
+
+#Null: there is not a significant difference in ranks for pre and post talk scores
+wsr_kermit <- wilcox.test(kermit$Score.pre, kermit$Score.post, paired = TRUE)
+
+wsr_kermit
+
+```
+There is no significant difference in ranks for pre and post talk Kermit scores (statistucal summary here.....)
