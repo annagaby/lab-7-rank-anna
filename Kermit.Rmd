@@ -1,0 +1,12 @@
+---
+title: "Kermit Perceptions Rank-based test"
+author: "Anna Calle"
+date: "11/13/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Anna's first meassage in the document
