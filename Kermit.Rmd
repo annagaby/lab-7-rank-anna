@@ -9,6 +9,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<<<<<<< HEAD
 Anna's first meassage in the document.
 
 Try number 2...
+=======
+Anna's first meassage in the document
+
+
+```{r}
+#Priscilla loading tidyverse and reading in kermit data
+
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+```
+```{r}
+#Prisclla making side by side histograms of Score.pre separated by gender
+
+kermit_hist <-kermit %>% 
+  ggplot(aes(x = Score.pre)) +
+  geom_histogram(bins = 4) +
+  facet_wrap(~Gender)
+
+kermit_hist
+```
+
+>>>>>>> f684e80a7d0942140f866327e27beb646a76894b
